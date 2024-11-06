@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <title>Buletin</title>
+    <style>
+        body {
+            margin: 0 130px;
+            font-family: 'Oswald', sans-serif !important;
+        }
+        nav {
+            display: flex;
+            position: sticky;
+            width: 100%;
+            justify-content: space-between;
+        }
+        #nav_left {
+            margin: 45px 0;
+            float: left;
+        }
+        #nav_right {
+            float: left;
+        }
+        #nav_right_ul{
+            margin: 51px 0 0 0;
+            float: left;
+        }
+
+        #nav_right_img{
+            float: left;
+            margin: 35px 0 0 0;
+        }
+
+        #nav_left p{
+            color:red;
+            display: inline;
+            padding-right: 25px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        #ul_left{
+            display: inline;
+            border-left: 1px solid black;
+            padding-left: 25px;
+        }
+        #ul_right{
+            display: inline;
+            padding-left: 25px;
+        }
+
+        #ul_left li{
+            text-decoration: none;
+            list-style-type: none;
+            display: inline;
+            padding-right: 25px;
+            font-size: 18.5px;
+        }
+        #ul_right li{
+            text-decoration: none;
+            list-style-type: none;
+            display: inline;
+            padding-right: 25px;
+            font-size: 20px;
+        }
+        #nav_right_img img{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+        #main_news{
+            margin-top: 50px;
+        }
+        #main_news_sub_header {
+            display: flex;
+        }
+        #main_news_sub_img img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+        #main_news_sub_img{
+            float: left;
+        }
+        #main_news_sub_header .text_time{
+            float: left;
+        }
+        #main_news_sub_header .text_time p{
+            margin-left: 10px;
+        }
+        #title{
+            border: 1px solid white;
+            background-color: #F5F5F5;
+            border-radius: 15px;
+        }
+        #title_sub p{
+            display: inline;
+            font-size: 25px;
+        }
+        #title_sub{
+            text-align: center;
+            margin: 20px 0;
+        }
+        #small-title-text{
+            text-align: center;
+            opacity: 0.8;
+            font-size: 18px;
+            margin-top: 24px;
+        }
+        .title_sub_div1{
+            margin-bottom: 10px;
+        }
+        .title_sub_div1 p{
+            font-weight: bold;
+        }
+        #main_news{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .main_news_sub{
+            width: 670px;
+        }
+        .main_news_sub img{
+            border-radius: 15px;
+            width: 100%;
+            height: 400px;
+        }
+        #main_news_sub_main_title p{
+            font-size: 50px;
+            margin-top: 10px;
+        }
+        .text1 p{
+            opacity: 0.8;
+            font-size: 20px;
+        }
+        #time_red{
+            float: left;
+            color: red;
+            font-size: 20px;
+        }
+        #text_time{
+            margin-left: 10px;
+        }
+        #text_time_red{
+            float: left;
+            margin: 24px 0 0 10px;
+
+        }
+        .main_title{
+            font-size: 35px;
+        }
+        .main_title_all p{
+            display: inline;
+        }
+        .flag{
+            display: flex;
+            justify-content: space-between;
+            margin: 35px 0 20px 0;
+        }
+        .see_all{
+            margin-top: 15px;
+
+        }
+        .see_all a{
+            text-decoration: none;
+            color: red;
+            font-size: 20px;
+        }
+        .sub_news_main{
+            width: 380px;
+        }
+        .sub_news_img img{
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+        }
+        .sub_news_logo img{
+            float: left;
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            margin-top: 6px;
+        }
+        .sub_news_text_time p{
+            float: left;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+        .sub_news_text_time{
+            margin-left: 7px;
+        }
+        .sub_news_text-and-logo{
+            display: flex;
+        }
+        .sub_news_text_large p{
+            margin: 10px 0;
+            font-size: 30px;
+
+        }
+        .sub_news_text_small p{
+            font-size: 16px;
+            opacity: 0.8;
+            margin-top: 15px;
+
+        }
+        .sub_time_red{
+            float: left;
+            color: red;
+            font-size: 16px;
+            margin-top: 7px;
+        }
+        .sub_text_time_red{
+            float: left;
+            margin: 7px 0 0 10px;
+        }
+        #over_all{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .footer_img img{
+            margin: auto;
+            width: 92%;
+            height: 92%;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .footer_img{
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            background-image: linear-gradient(to bottom right, red, yellow);
+
+        }
+        .footer_text p{
+            text-align: center;
+        }
+        .footer_all_content{
+            width: 100px;
+            float: left;
+        }
+        #footer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .dropdown-container{
+            display: none;
+        }
+        .red{
+            color: red;
+        }
+        @media screen and (max-width: 1630px) {
+            .main_news_sub {
+                width: 500px;
+            }
+        }
+        @media screen and (max-width: 1277px) {
+            .main_news_sub {
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 1038px) {
+            .sub_news_main {
+                width: 100%;
+            }
+            #nav_right {
+                display: none;
+            }
+            .dropdown-container {
+                display: block;
+            }
+            .menu-button {
+                background-color: black;
+                border: none;
+                color: white;
+                font-size: 24px;
+                padding: 12px 10px 10px 10px;
+                cursor: pointer;
+                border-radius: 10%;
+            }
+
+            .dropdown-menu {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 0;
+                background-color: black;
+                color: white;
+                min-width: 160px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                padding: 10px 0;
+                z-index: 1;
+                overflow: hidden;
+            }
+
+            .dropdown-menu a {
+                color: white;
+                padding: 8px 16px;
+                text-decoration: none;
+                display: block;
+                font-size: 20px;
+            }
+
+            .dropdown-menu a:hover {
+                background-color: #333333;
+            }
+
+            .dropdown-container:hover .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-container {
+                margin-top: 35px;
+            }
+        }
+        @media screen and (max-width: 833px) {
+            body{
+                    margin: 0 0;
+            }
+            #ul_left li{
+                padding-right: 10px;
+            }
+            #ul_left {
+                padding-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div id="nav_left">
+            <p>
+                Buletin
+            </p>
+            <ul id="ul_left">
+                <li>Stories</li>
+                <li>Creator</li>
+                <li>Community</li>
+                <li>Subscribe</li>
+            </ul>
+
+        </div>
+        <div id="nav_right">
+            <div id="nav_right_ul">
+                <ul id="ul_right">
+                    <li><i class="bi bi-pencil-square"></i></li>
+                    <li>Write</li>
+                    <li><i class="bi bi-bell"></i></li>
+                </ul>
+            </div>
+            <div id="nav_right_img">
+                <img src="../img/man.jpg">
+            </div>
+        </div>
+
+        <div class="dropdown-container">
+            <button class="menu-button"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#f7f7f8" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg></button>
+            <div class="dropdown-menu">
+                <a href="#">Your Profile</a>
+                <a href="#">Write</a>
+                <a href="#"><i class="bi bi-pencil-square"></i></a>
+                <a href="#"><i class="bi bi-bell"></i></a>
+            </div>
+        </div>
+
+
+
+
+
+
+    </nav>
+</header>
+<main>
+    <div id="title">
+        <div>
+            <p id="small-title-text">WELCOME TO BULETIN</p>
+        </div>
+        <div id="title_sub">
+            <div class="title_sub_div1">
+                <p>Craft narratives ☺️ that ignite </p><p class="red">inspiration ☺️ ,</p>
+            </div>
+            <div class="title_sub_div1">
+                <p class="red">knowledge</p>  <i class="bi bi-journals"></i><p>, and</p><p class="red"> entertainment</p>
+            </div>
+        </div>
+    </div>
+    <div id="main_news">
+        <div class="main_news_sub"><img src="../img/man.jpg" alt=""></div>
+        <div class="main_news_sub">
+            <div id="main_news_sub_header">
+                <div id="main_news_sub_img">
+                    <img src="../img/man.jpg" alt="">
+                </div>
+                <div id="text_time">
+                    <p>Netflix  .  12 minutes ago</p>
+                </div>
+            </div>
+            <div id="main_news_sub_main_title">
+                <p>Where To Watch 'John<br>Wick: Chapter 4'</p>
+            </div>
+            <div class="text1">
+                <p>There's been no official announcement regarding John Wick: Chapter 4's streaming release. However, given it's a Lionsgate film, John Wick: Chapter 4 will eventually be released on Starz...</p>
+            </div>
+
+            <div >
+                <p id="time_red">Movies</p><p id="text_time_red">.  4 min read</p>
+            </div>
+        </div>
+    </div>
+    <div class="flag">
+        <div class="main_title_all">
+            <p class="main_title">Latest News</p>
+        </div>
+        <div class="see_all">
+            <a href="" >See all <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+    <div id="over_all">
+        <div class="sub_news_main">
+            <div class="sub_news">
+                <div class="sub_news_img">
+                    <img src="../img/man.jpg" alt="">
+                </div>
+                <div class="sub_news_text-and-logo">
+                    <div class="sub_news_logo">
+                        <img src="../img/man.jpg" alt="">
+                    </div>
+                    <div class="sub_news_text_time">
+                        <p>Formula 1 . 3 hours ago</p>
+                    </div>
+                </div>
+                <div class="sub_news_text_large">
+                    <p>'He deserves a lot more' Verstappen backs Alonso</p>
+                </div>
+                <div class="sub_news_text_small">
+                    <p>Max Verstappen believes his fellow two- time world champion Fernando Alonso "deserves a lot more• victories in Formula 1 and has backed the Spaniar...</p>
+                </div>
+                <div >
+                    <p class="sub_time_red">Movies</p><p class="sub_text_time_red">.  4 min read</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sub_news_main">
+            <div class="sub_news">
+                <div class="sub_news_img">
+                    <img src="../img/man.jpg" alt="">
+                </div>
+                <div class="sub_news_text-and-logo">
+                    <div class="sub_news_logo">
+                        <img src="../img/man.jpg" alt="">
+                    </div>
+                    <div class="sub_news_text_time">
+                        <p>Formula 1 . 3 hours ago</p>
+                    </div>
+                </div>
+                <div class="sub_news_text_large">
+                    <p>'He deserves a lot more' Verstappen backs Alonso</p>
+                </div>
+                <div class="sub_news_text_small">
+                    <p>Max Verstappen believes his fellow two- time world champion Fernando Alonso "deserves a lot more• victories in Formula 1 and has backed the Spaniar...</p>
+                </div>
+                <div >
+                    <p class="sub_time_red">Movies</p><p class="sub_text_time_red">.  4 min read</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sub_news_main">
+            <div class="sub_news">
+                <div class="sub_news_img">
+                    <img src="../img/man.jpg" alt="">
+                </div>
+                <div class="sub_news_text-and-logo">
+                    <div class="sub_news_logo">
+                        <img src="../img/man.jpg" alt="">
+                    </div>
+                    <div class="sub_news_text_time">
+                        <p>Formula 1 . 3 hours ago</p>
+                    </div>
+                </div>
+                <div class="sub_news_text_large">
+                    <p>'He deserves a lot more' Verstappen backs Alonso</p>
+                </div>
+                <div class="sub_news_text_small">
+                    <p>Max Verstappen believes his fellow two- time world champion Fernando Alonso "deserves a lot more• victories in Formula 1 and has backed the Spaniar...</p>
+                </div>
+                <div >
+                    <p class="sub_time_red">Movies</p><p class="sub_text_time_red">.  4 min read</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sub_news_main">
+            <div class="sub_news">
+                <div class="sub_news_img">
+                    <img src="../img/man.jpg" alt="">
+                </div>
+                <div class="sub_news_text-and-logo">
+                    <div class="sub_news_logo">
+                        <img src="../img/man.jpg" alt="">
+                    </div>
+                    <div class="sub_news_text_time">
+                        <p>Formula 1 . 3 hours ago</p>
+                    </div>
+                </div>
+                <div class="sub_news_text_large">
+                    <p>'He deserves a lot more' Verstappen backs Alonso</p>
+                </div>
+                <div class="sub_news_text_small">
+                    <p>Max Verstappen believes his fellow two- time world champion Fernando Alonso "deserves a lot more• victories in Formula 1 and has backed the Spaniar...</p>
+                </div>
+                <div >
+                    <p class="sub_time_red">Movies</p><p class="sub_text_time_red">.  4 min read</p>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="flag">
+        <div class="main_title_all">
+            <p class="main_title">Buletin Story</p>
+        </div>
+        <div class="see_all">
+            <a href="" >See all <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+        <div class="footer_all_content">
+            <div class="footer_img">
+                <img src="../img/man.jpg" alt="">
+            </div>
+            <div class="footer_text">
+                <p>bbcnews</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+
+</body>
+</html>
